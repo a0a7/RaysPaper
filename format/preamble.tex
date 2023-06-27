@@ -1,0 +1,59 @@
+% This is preamble.tex
+
+
+
+% Set default input encoding.
+\usepackage[utf8]{inputenc}
+
+%%% If something looks strange, try one of the input encodings below instead.
+%\usepackage[latin1]{inputenc} 
+%\usepackage[applemac]{inputenc}
+%\usepackage[ansinew]{inputenc}
+
+% Set your default font encoding.
+\usepackage[T1]{fontenc}
+
+% Set default language priority order.
+\usepackage[english]{babel}
+
+% Set default margins.
+\usepackage[a4paper,margin=25mm,headsep=5mm,headheight=12pt]{geometry}
+
+% If you need to define macros or include more packages, do all that here.
+\frenchspacing
+\usepackage{amsmath,amssymb,amsfonts,amsthm}  % Mathematics
+
+\usepackage{hyperref} 
+\hypersetup{colorlinks, 
+    citecolor=black,
+    filecolor=black, 
+    linkcolor=black,
+    urlcolor=black
+      }
+
+
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{physics} %A lot of useful short commands for writing math/physics
+\usepackage[separate-uncertainty=true]{siunitx} %Use this for writing SI units
+\sisetup{
+  range-phrase=--,
+  detect-all,
+  output-decimal-marker={.},
+  %round-mode=places, % Use these if you want to force yourself to think about how many decimals you actually have
+  %round-precision=0, % 
+  range-units=single,
+  per-mode=fraction, % change fraction to reciprocal if you want ^{-1}
+}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage[toc,acronym]{glossaries}
+\usepackage{booktabs} % For nice tables
+\usepackage{fancyhdr} % For header and footer
+\usepackage{lipsum}
+\usepackage{lastpage} % For page counter
+\usepackage{svg} % Makes it possible to use .svg files 
+\usepackage{float} % Just [H] for placing figures
+\usepackage{listings} % Enables source code listings
+\usepackage{comment} % Use \begin{comment}

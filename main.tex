@@ -1,0 +1,52 @@
+% Rays paper template
+% Revised 2023 by Max Eriksson
+
+% DO NOT MODIFY this file.
+
+\documentclass[12pt,titlepage]{article}
+
+\input{format/preamble}
+
+%\makeglossaries % uncomment this line if you need a List of Abbreviations
+%\input{format/glossary} % this too
+
+\begin{document}
+
+\include{format/cover}
+
+\input{format/header}
+
+\doublespacing
+\input{paper/abstract}
+
+\pagestyle{empty}
+\input{paper/acknowledgements}
+
+\clearpage
+
+\tableofcontents
+\clearpage
+\setcounter{page}{1}
+
+%\clearpage % uncomment this line if you use a List of Abbreviations
+%%\glsaddall
+%\printglossary
+%\printglossary[type=\acronymtype,nonumberlist,title=List of Abbreviations]
+
+\pagestyle{fancy}
+
+\input{paper/introduction}
+\input{paper/method}
+\input{paper/results}
+\input{paper/discussion}
+
+\clearpage
+\addcontentsline{toc}{section}{References}
+\begin{singlespace}
+\bibliographystyle{ieeetr}
+\bibliography{references.bib}
+\end{singlespace}
+
+\include{paper/appendix}
+
+\end{document}
