@@ -5,6 +5,7 @@ import csv
 
 x = [0, 1, 2, 3]
 y = []
+a = []
 yError = []
 plt.grid()
 
@@ -26,16 +27,29 @@ with open('python/data/caliper_scale.csv','r') as data:
     data.close()
 plt.title("")
 
+with open('python/data/pressed_measurements.csv','r') as pressedData:
+    table = csv.reader(pressedData, delimiter=',')
+    for row in table:
+        aval = float(row[14])
+        if aval != 1.11:
+            a.append(aval)
+    pressedData.close()
+
+
 plt.xlabel("Sample")
 plt.ylabel("Density (g/cm³)")
 
-plt.ylim(0, 1.4)
+plt.xlim(-0.5, 3.5)
+plt.ylim(0.3, 1.5)
 plt.xticks([0, 1, 2, 3], ['R1', 'R2', 'R3', 'R4'])
-plt.yticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3],
-           ['0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1.0', '1.1', '1.2', '1.3'])
+plt.yticks([0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5],
+           ['0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1.0', '1.1', '1.2', '1.3', '1.4', '1.5'])
 
 
-plt.plot(x, y, color='#35424a', marker='o', linewidth=0, markersize=3, )
+plt.plot(x, y, color='#35424a', marker='o', linewidth=0, markersize=5, label="Filaments")
+plt.plot(x, a, color='#b30000', marker='o', linewidth=0, markersize=5, label="Hot-Pressed Plates")
+plt.legend(loc='upper right')
+
 # plt.bar(x, y, color='#728d9f')
 
 plt.savefig('python/output/average_density.svg', format='svg',dpi=1200,bbox_inches='tight')
