@@ -36,7 +36,7 @@ avg2 = (y[3] + y[4] + y[5])/3
 avg3 = (y[6] + y[7] + y[8])/3
 avg4 = (y[9] + y[10] + y[11])/3
 
-plt.plot(x, y, color='#35424a', marker='o', linewidth=0, markersize=4, label="Single Sample Values")
+plt.plot(x, y, color='#35424a', marker='o', linewidth=0, markersize=4, label="Single Sample Valuesn ote")
 plt.plot([0, 2], [avg1, avg1], color='#728d9f', linestyle='--', linewidth=2, label="Average Filament Values")
 plt.plot([3, 5], [avg2, avg2], color='#728d9f', linestyle='--', linewidth=2)
 plt.plot([6, 8], [avg3, avg3], color='#728d9f', linestyle='--', linewidth=2)
