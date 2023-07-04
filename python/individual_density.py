@@ -36,7 +36,7 @@ avg2 = (y[3] + y[4] + y[5])/3
 avg3 = (y[6] + y[7] + y[8])/3
 avg4 = (y[9] + y[10] + y[11])/3
 
-plt.plot(x, y, color='#35424a', marker='o', linewidth=0, markersize=4, label="Single Sample Valuesn ote")
+plt.plot(x, y, color='#35424a', marker='o', linewidth=0, markersize=4, label="Individual Sample Values")
 plt.plot([0, 2], [avg1, avg1], color='#728d9f', linestyle='--', linewidth=2, label="Average Filament Values")
 plt.plot([3, 5], [avg2, avg2], color='#728d9f', linestyle='--', linewidth=2)
 plt.plot([6, 8], [avg3, avg3], color='#728d9f', linestyle='--', linewidth=2)
@@ -46,8 +46,6 @@ plt.legend()
 # plt.errorbar(4, avg2, yerr=0.03, ecolor='#92adbf', elinewidth=2, capsize=4, capthick=2, fmt='none', zorder=1)
 # plt.errorbar(7, avg3, yerr=0.02, ecolor='#92adbf', elinewidth=2, capsize=4, capthick=2, fmt='none', zorder=1)
 # plt.errorbar(10, avg4, yerr=0.06, ecolor='#92adbf', elinewidth=2, capsize=4, capthick=2, fmt='none', zorder=1)
-
-# plt.bar(x, y, color='#728d9f')
 
 plt.savefig('python/output/individual_density.svg', format='svg',dpi=1200,bbox_inches='tight')
 plt.show()
