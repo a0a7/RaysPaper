@@ -46,8 +46,8 @@ plt.yticks([0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5],
            ['0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1.0', '1.1', '1.2', '1.3', '1.4', '1.5'])
 
 
-plt.plot(x, y, color='#35424a', marker='o', linewidth=0, markersize=5, label="Filaments")
-plt.plot(x, a, color='#b30000', marker='o', linewidth=0, markersize=5, label="Hot-Pressed Plates")
+plt.plot(x, y, color='#35424a', marker='o', linewidth=0, markersize=5, label="Extruded Filaments")
+plt.plot(x, a, color='#b30000', marker='o', linewidth=0, markersize=5, label="Hot-Pressed Sheets")
 plt.legend(loc='upper right')
 
 # plt.bar(x, y, color='#728d9f')
