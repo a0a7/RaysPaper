@@ -2,6 +2,17 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
+from pathlib import Path
+import matplotlib as mpl
+
+
+#### PRESET FOR SERIF ######## CANT HANDLE ÅÄÖ, trick is using $\mathrm{ö}$
+fpath = Path(mpl.get_data_path(), "fonts/ttf/cmr10.ttf")
+# Look up name un /usr/share/matplotlib/mpl-data/fonts, don't use actual name!
+plt.rc('font', **{'size' : 12, 'sans-serif': ['cmr10']})
+mpl.rcParams["mathtext.fontset"] = "cm"
+plt.rc('axes', unicode_minus=False)
+
 
 x = [0, 1, 5, 10, 30]
 a = []
@@ -101,8 +112,8 @@ filaments.append((e[2] + f[2] + g[2] + h[2])/4)
 filaments.append((e[3] + f[3] + g[3] + h[3])/4)
 filaments.append((e[4] + f[4] + g[4] + h[4])/4)
 
-plt.plot(x, filaments, color='#35424a', label="Average of Extruded Filaments", marker='o', linewidth=2, markersize=4, zorder=2)
-plt.plot(x, sheets, color='#b30000', label="Average of Hot-Pressed Sheets", marker='o', linewidth=2, markersize=4, zorder=2)
+plt.plot(x, filaments, color='#51a5b2', label="Average of Extruded Filaments", marker='o', linewidth=2, markersize=4, zorder=2)
+plt.plot(x, sheets, color='#800000', label="Average of Hot-Pressed Sheets", marker='o', linewidth=2, markersize=4, zorder=2)
 plt.legend()
 plt.xlim(0, 30.5)
 plt.xlabel(r'Time in Solution $(min)$')

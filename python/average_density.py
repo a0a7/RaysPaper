@@ -2,6 +2,17 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
+from pathlib import Path
+import matplotlib as mpl
+
+
+#### PRESET FOR SERIF ######## CANT HANDLE ÅÄÖ, trick is using $\mathrm{ö}$
+fpath = Path(mpl.get_data_path(), "fonts/ttf/cmr10.ttf")
+# Look up name un /usr/share/matplotlib/mpl-data/fonts, don't use actual name!
+plt.rc('font', **{'size' : 12, 'sans-serif': ['cmr10']})
+mpl.rcParams["mathtext.fontset"] = "cm"
+plt.rc('axes', unicode_minus=False)
+
 
 x = [0, 1, 2, 3]
 y = []
@@ -18,7 +29,7 @@ with open('python/data/caliper_scale.csv','r') as data:
             xval = counter / 4 - 1
             yval = float(row[10])
             y.append(yval)
-            plt.errorbar(xval, yval, yerr=float(row[11]), ecolor='#728d9f', elinewidth=2, capsize=4, capthick=2, fmt='none')
+            plt.errorbar(xval, yval, yerr=float(row[11]), color='#3f818b', elinewidth=2, capsize=4, capthick=2, fmt='none')
             yError.append(float(row[11]))
         counter += 1
     print("\n\n" + str(x))
@@ -46,8 +57,8 @@ plt.yticks([0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5],
            ['0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1.0', '1.1', '1.2', '1.3', '1.4', '1.5'])
 
 
-plt.plot(x, y, color='#35424a', marker='o', linewidth=0, markersize=5, label="Extruded Filaments")
-plt.plot(x, a, color='#b30000', marker='o', linewidth=0, markersize=5, label="Hot-Pressed Sheets")
+plt.plot(x, y, color='#51a5b2', marker='o', linewidth=0, markersize=5, label="Extruded Filaments")
+plt.plot(x, a, color='#800000', marker='o', linewidth=0, markersize=5, label="Hot-Pressed Sheets")
 plt.legend(loc='upper right')
 
 # plt.bar(x, y, color='#728d9f')

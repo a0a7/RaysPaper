@@ -2,6 +2,18 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
+from pathlib import Path
+import matplotlib as mpl
+
+
+#### PRESET FOR SERIF ######## CANT HANDLE ÅÄÖ, trick is using $\mathrm{ö}$
+fpath = Path(mpl.get_data_path(), "fonts/ttf/cmr10.ttf")
+# Look up name un /usr/share/matplotlib/mpl-data/fonts, don't use actual name!
+plt.rc('font', **{'size' : 12, 'sans-serif': ['cmr10']})
+mpl.rcParams["mathtext.fontset"] = "cm"
+plt.rc('axes', unicode_minus=False)
+
+
 
 x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 y = []
@@ -36,11 +48,11 @@ avg2 = (y[3] + y[4] + y[5])/3
 avg3 = (y[6] + y[7] + y[8])/3
 avg4 = (y[9] + y[10] + y[11])/3
 
-plt.plot(x, y, color='#35424a', marker='o', linewidth=0, markersize=4, label="Individual Sample Values")
-plt.plot([0, 2], [avg1, avg1], color='#728d9f', linestyle='--', linewidth=2, label="Average Filament Values")
-plt.plot([3, 5], [avg2, avg2], color='#728d9f', linestyle='--', linewidth=2)
-plt.plot([6, 8], [avg3, avg3], color='#728d9f', linestyle='--', linewidth=2)
-plt.plot([9, 11], [avg4, avg4], color='#728d9f', linestyle='--', linewidth=2)
+plt.plot(x, y, color='#51a5b2', marker='o', linewidth=0, markersize=4, label="Individual Sample Values")
+plt.plot([0, 2], [avg1, avg1], color='#3f818b', linestyle='--', linewidth=2, label="Average Filament Values")
+plt.plot([3, 5], [avg2, avg2], color='#3f818b', linestyle='--', linewidth=2)
+plt.plot([6, 8], [avg3, avg3], color='#3f818b', linestyle='--', linewidth=2)
+plt.plot([9, 11], [avg4, avg4], color='#3f818b', linestyle='--', linewidth=2)
 plt.legend()
 # plt.errorbar(1, avg1, yerr=0.05, ecolor='#92adbf', elinewidth=2, capsize=4, capthick=2, fmt='none', zorder=1)
 # plt.errorbar(4, avg2, yerr=0.03, ecolor='#92adbf', elinewidth=2, capsize=4, capthick=2, fmt='none', zorder=1)
